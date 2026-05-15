@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Камень-Ножницы-Бумага</title>
+    <link rel="stylesheet" href="/krestiki.css">
+</head>
+<body>
+<div class="game-container" id="gameContainer">
+    
+    <div class="screen active" id="menuScreen">
+        <h1>✊ КАМЕНЬ ✌ НОЖНИЦЫ ✋ БУМАГА</h1>
+        <div class="menu-buttons">
+            <button class="menu-btn" id="playWithComputer">
+                <span class="menu-emoji">🤖</span>
+                <span>Играть с компьютером</span>
+            </button>
+            <button class="menu-btn" id="playWithHuman">
+                <span class="menu-emoji">👤</span>
+                <span>Играть с другом</span>
+            </button>
+        </div>
+        <div class="footer-note">Выберите режим игры</div>
+    </div>
+    
+    <div class="screen" id="computerScreen">
+        <div class="back-button" id="backFromComputer">← В меню</div>
+        <h1>🤖 ИГРА С КОМПЬЮТЕРОМ</h1>
+        
+        <div class="score-area">
+            <div class="score-box">
+                <div class="score-label">Вы</div>
+                <div class="score-value" id="playerScoreComputer">0</div>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="score-box">
+                <div class="score-label">Компьютер</div>
+                <div class="score-value" id="computerScore">0</div>
+            </div>
+        </div>
+        
+        <div class="turn-indicator" id="turnIndicatorComputer">Сделайте выбор</div>
+        
+        <div class="choices-area">
+            <button class="choice-btn" data-choice="rock">
+                <span class="choice-emoji">✊</span>
+                <span class="choice-text">Камень</span>
+            </button>
+            <button class="choice-btn" data-choice="scissors">
+                <span class="choice-emoji">✌</span>
+                <span class="choice-text">Ножницы</span>
+            </button>
+            <button class="choice-btn" data-choice="paper">
+                <span class="choice-emoji">✋</span>
+                <span class="choice-text">Бумага</span>
+            </button>
+        </div>
+        
+        <div class="result-area">
+            <div class="battle-display">
+                <div class="player-choice-display" id="playerChoiceDisplayComputer">❓</div>
+                <div class="vs-text">VS</div>
+                <div class="player-choice-display" id="computerChoiceDisplayComputer">❓</div>
+            </div>
+            <div class="message" id="statusMessageComputer">Выберите камень, ножницы или бумагу</div>
+        </div>
+        
+        <button class="btn-reset" id="resetButtonComputer">↻ Сбросить счёт</button>
+        <div class="footer-note">Игра до 5 побед</div>
+    </div>
+    
+    <div class="screen" id="humanScreen">
+        <div class="back-button" id="backFromHuman">← В меню</div>
+        <h1>👤 ИГРА С ДРУГОМ</h1>
+        
+        <div class="score-area">
+            <div class="score-box">
+                <div class="score-label">Игрок 1</div>
+                <div class="score-value" id="player1Score">0</div>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="score-box">
+                <div class="score-label">Игрок 2</div>
+                <div class="score-value" id="player2Score">0</div>
+            </div>
+        </div>
+        
+        <div class="turn-indicator" id="turnIndicatorHuman">Игрок 1 делает выбор</div>
+        
+        <div class="human-players-area">
+            <div class="player-section">
+                <h3>Игрок 1</h3>
+                <p class="player-hint" id="player1Hint">Ваш ход, выбирайте</p>
+                <div class="choices-area small-choices">
+                    <button class="choice-btn-human player1-btn" data-choice="rock">
+                        <span class="choice-emoji">✊</span>
+                        <span class="choice-text">Камень</span>
+                    </button>
+                    <button class="choice-btn-human player1-btn" data-choice="scissors">
+                        <span class="choice-emoji">✌</span>
+                        <span class="choice-text">Ножницы</span>
+                    </button>
+                    <button class="choice-btn-human player1-btn" data-choice="paper">
+                        <span class="choice-emoji">✋</span>
+                        <span class="choice-text">Бумага</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="player-section">
+                <h3>Игрок 2</h3>
+                <p class="player-hint" id="player2Hint">Ждите свой ход</p>
+                <div class="choices-area small-choices">
+                    <button class="choice-btn-human player2-btn" data-choice="rock">
+                        <span class="choice-emoji">✊</span>
+                        <span class="choice-text">Камень</span>
+                    </button>
+                    <button class="choice-btn-human player2-btn" data-choice="scissors">
+                        <span class="choice-emoji">✌</span>
+                        <span class="choice-text">Ножницы</span>
+                    </button>
+                    <button class="choice-btn-human player2-btn" data-choice="paper">
+                        <span class="choice-emoji">✋</span>
+                        <span class="choice-text">Бумага</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="btn-reset" id="resetButtonHuman">↻ Сбросить счёт</button>
+        <div class="footer-note">Игра до 5 побед</div>
+    </div>
+    
+</div>
+
+<script src="/krestiki.js"></script>
+</body>
+</html>
